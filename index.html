@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le battant — Montage d'un volet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Pacifico&family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css?v=1">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="logo">
+      <span class="logo-mark">LB</span>
+      <span class="logo-text"><span class="brand">le battant</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#genesis">Montage</a></li>
+      <li><a href="#specs">Spécifications</a></li>
+      <li><a href="#config">Gamme</a></li>
+      <li><a href="#contact">Devis</a></li>
+    </ul>
+    <button class="nav-cta">DEMANDER UN DEVIS</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="dot"></span> SUR-MESURE · FABRIQUÉ EN FRANCE · 8 TYPES DE VOLETS ALU
+    </div>
+    <h1 class="hero-title">
+      <span class="hero-line">le</span>
+      <span class="hero-line cursive">battant</span>
+    </h1>
+    <p class="hero-tagline">
+      <em>Le battant. Et tout ce qui suit.</em>
+    </p>
+    <div class="hero-foot">
+      <div class="scroll-indicator">
+        <span>SCROLLER POUR MONTER</span>
+        <div class="scroll-line"></div>
+      </div>
+      <div class="hero-spec-mini">
+        <div><span class="num">52</span><span class="unit">pièces</span></div>
+        <div><span class="num">100%</span><span class="unit">sur-mesure</span></div>
+        <div><span class="num">10</span><span class="unit">ans laquage</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GENESI — sticky Three.js stage -->
+<section id="genesis" class="genesis">
+  <div class="genesis-track">
+    <div class="genesis-stage">
+      <div class="stage-bg"></div>
+      <canvas id="three-canvas"></canvas>
+      <div id="three-loader" class="three-loader">
+        <div class="loader-spinner"></div>
+        <span>Chargement du modèle 3D...</span>
+      </div>
+
+      <div class="stage-caption">
+        <div class="caption-step">
+          <span class="step-num">01</span>
+          <span class="step-tot">/08</span>
+        </div>
+        <div class="caption-text">
+          <h2 class="caption-title" data-cap="0">Le silence.</h2>
+          <h2 class="caption-title hidden" data-cap="1">Le <em>dormant</em>.</h2>
+          <h2 class="caption-title hidden" data-cap="2">Les gonds.</h2>
+          <h2 class="caption-title hidden" data-cap="3">Le cadre.</h2>
+          <h2 class="caption-title hidden" data-cap="4">Les <em>lames</em>.</h2>
+          <h2 class="caption-title hidden" data-cap="5">La paumelle.</h2>
+          <h2 class="caption-title hidden" data-cap="6">L'espagnolette.</h2>
+          <h2 class="caption-title hidden" data-cap="7"><em>Battant</em>.</h2>
+        </div>
+        <div class="caption-bodies">
+          <p class="caption-body" data-cap="0">Le mur, l'attente. Avant le coup, il y a le ring.</p>
+          <p class="caption-body hidden" data-cap="1">Cadre encastré dans la maçonnerie. Aluminium thermolaqué noir profond. <em>La base du combat</em>.</p>
+          <p class="caption-body hidden" data-cap="2">Quatre points d'ancrage en inox 316. Vissés, scellés, là pour <em>vingt ans</em>.</p>
+          <p class="caption-body hidden" data-cap="3">Quatre traverses soudées à la main. La structure du vantail prend forme.</p>
+          <p class="caption-body hidden" data-cap="4">Une à une, les lames se posent. <em>Comme on monte un round</em>.</p>
+          <p class="caption-body hidden" data-cap="5">L'articulation. La paumelle s'emboîte sur le gond. <em>Là où tout se joue</em>.</p>
+          <p class="caption-body hidden" data-cap="6">Tringle centrale, verrou haut, verrou bas. Le mécanisme qui ferme.</p>
+          <p class="caption-body hidden" data-cap="7">Sur-mesure. Aluminium. Fait en France. <em>Et tout ce qui suit</em>.</p>
+        </div>
+      </div>
+
+      <div class="stage-progress">
+        <div class="progress-track">
+          <div class="progress-fill"></div>
+        </div>
+        <div class="progress-steps">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section id="specs" class="specs">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Le <span class="cursive">cahier des charges</span>.</h2>
+    <p class="section-sub">Chaque chiffre est une promesse qu'on s'engage à tenir.</p>
+  </div>
+
+  <div class="specs-grid">
+    <div class="spec-card">
+      <div class="spec-label">Matière</div>
+      <div class="spec-value">Aluminium</div>
+      <div class="spec-detail">profilé extrudé · thermolaqué</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Garantie laquage</div>
+      <div class="spec-value">10 ans</div>
+      <div class="spec-detail">selon conditions d'exposition</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Quincaillerie</div>
+      <div class="spec-value">Inox 316</div>
+      <div class="spec-detail">gonds, paumelles, espagnolette</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Types</div>
+      <div class="spec-value">8</div>
+      <div class="spec-detail">battant, pliant, coulissant, brise-vue…</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Sur-mesure</div>
+      <div class="spec-value">100%</div>
+      <div class="spec-detail">aucune gamme catalogue</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Fabrication</div>
+      <div class="spec-value">France</div>
+      <div class="spec-detail">atelier Le battant · 06</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Délai</div>
+      <div class="spec-value">4–6 sem.</div>
+      <div class="spec-detail">après cadrage et signature</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Réponse devis</div>
+      <div class="spec-value">48h</div>
+      <div class="spec-detail">jours ouvrés</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIG -->
+<section id="config" class="config">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Huit <span class="cursive">types</span>. Un seul atelier.</h2>
+    <p class="section-sub">Pas de catalogue. On cadre, on chiffre, on fait.</p>
+  </div>
+
+  <div class="config-cards">
+    <div class="config-card">
+      <div class="card-header">
+        <span class="card-tag">CLASSIQUE</span>
+        <h3>Battant à gond</h3>
+      </div>
+      <ul class="card-features">
+        <li>2 vantaux pivotants</li>
+        <li>Lames horizontales</li>
+        <li>Paumelles inox</li>
+        <li>Espagnolette centrale</li>
+      </ul>
+      <button class="card-cta">CHIFFRER</button>
+    </div>
+
+    <div class="config-card featured">
+      <div class="card-ribbon">SIGNATURE</div>
+      <div class="card-header">
+        <span class="card-tag">SUSPENDU</span>
+        <h3>Coulissant</h3>
+      </div>
+      <ul class="card-features">
+        <li>Rail haut suspendu</li>
+        <li>Glissière silencieuse</li>
+        <li>Vantaux jusqu'à 3 m</li>
+        <li>Sans roulement au sol</li>
+      </ul>
+      <button class="card-cta">CHIFFRER</button>
+    </div>
+
+    <div class="config-card">
+      <div class="card-header">
+        <span class="card-tag">URBAIN</span>
+        <h3>Brise-vue</h3>
+      </div>
+      <ul class="card-features">
+        <li>Lames orientables</li>
+        <li>Intimité contrôlée</li>
+        <li>Tamis solaire</li>
+        <li>Sur-mesure intégral</li>
+      </ul>
+      <button class="card-cta">CHIFFRER</button>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Demandez un <span class="cursive">devis</span>.</h2>
+      <p class="contact-body">
+        On chiffre vrai, sur-mesure, en 48h. Réponse signée par Simon Marques, fondateur. Atelier à Le Cannet, intervention zone PACA (06 · 83 · 13).
+      </p>
+      <div class="contact-meta">
+        <div><span class="meta-label">Téléphone</span><span class="meta-value">06 61 54 96 11</span></div>
+        <div><span class="meta-label">Email</span><span class="meta-value">contact@lebattant.fr</span></div>
+        <div><span class="meta-label">Atelier</span><span class="meta-value">Le Cannet · 06</span></div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <form class="contact-form">
+        <label>
+          <span>Nom</span>
+          <input type="text" placeholder="—">
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" placeholder="—">
+        </label>
+        <label>
+          <span>Téléphone</span>
+          <input type="tel" placeholder="—">
+        </label>
+        <label>
+          <span>Type de volet</span>
+          <select>
+            <option>Battant à gond</option>
+            <option>Battant à dormant</option>
+            <option>Pliant</option>
+            <option>Pliant suspendu</option>
+            <option>Coulissant suspendu</option>
+            <option>Brise-vue</option>
+            <option>Brise-soleil</option>
+            <option>Séparatif balcon</option>
+          </select>
+        </label>
+        <button type="button" class="form-cta">DEMANDER UN DEVIS</button>
+        <p class="form-fine">Réponse signée Simon Marques sous 48h ouvrées.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="logo">
+      <span class="logo-mark">LB</span>
+      <span class="logo-text"><span class="brand">le battant</span></span>
+    </div>
+    <p class="footer-tag"><em>Le battant. Et tout ce qui suit.</em></p>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 · Le battant · Simon Marques · 06 61 54 96 11</span>
+    <span class="footer-credit">Démo scroll 3D — POC Herman Vanel</span>
+  </div>
+</footer>
+
+<script src="assets/script.js?v=1"></script>
+<script type="module" src="assets/three-scene.js?v=1"></script>
+</body>
+</html>
