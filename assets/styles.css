@@ -407,3 +407,33 @@ img { display: block; max-width: 100%; }
   .footer { padding: 48px 24px; }
   .footer-top, .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
 }
+
+/* ─────────────────────────────────────────────────────────────────────
+   TÉLÉPHONE (≤ 640 px) — ajouté le 2026-08-15
+   La démo débordait de 133 px : elle se lisait en biais, à moitié hors
+   écran. La cause n'était pas une largeur fixe mais `1fr`, qui vaut en
+   réalité `minmax(auto, 1fr)` : une colonne de grille REFUSE de descendre
+   sous la largeur naturelle de son contenu. Un chiffre en 52 px poussait
+   donc sa colonne à 284 px, et la grille à 483. D'où `minmax(0, 1fr)`
+   partout : on autorise la colonne à rétrécir, et le texte se replie.
+   ───────────────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .specs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-bottom: 96px;
+  }
+  .spec-card { padding: 28px 18px; }
+  .spec-value { font-size: 34px; }          /* 52 px ne tient pas en 2 colonnes */
+  .spec-label { letter-spacing: 0.18em; }   /* 0.3em faisait déborder le libellé */
+  .spec-detail { font-size: 11px; }
+
+  /* Le bloc de contact : trois colonnes ne rentrent pas dans 375 px. */
+  .contact-inner { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .contact-left, .contact-right { min-width: 0; }
+  .contact-meta { grid-template-columns: minmax(0, 1fr); gap: 16px; max-width: none; }
+  .contact-body { margin: 24px 0 32px; }
+
+  /* Filet : une adresse e-mail ou une URL sans espace déborde sinon. */
+  body { overflow-x: hidden; }
+  .contact-inner *, .specs-grid * { overflow-wrap: anywhere; }
+}
